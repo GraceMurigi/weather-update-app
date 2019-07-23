@@ -6,4 +6,4 @@ MarkupSafe==1.1.1
 Werkzeug==0.15.2
 gunicorn==19.7.1
 pytz==2017.2
-requests==2.13.0
+requests==2.20.0

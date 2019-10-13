@@ -3,11 +3,13 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from weather import query_api
 
 app = Flask(__name__)
+# app.config['DEBUG'] = True
+
 
 @app.route('/')
 def index():
     return render_template(
-        'index.html',
+        'weather.html',
         data=[{'name':'Nairobi'}, {'name':'Mombasa'}, {'name':'Kisumu'},
         {'name':'Dar es Salaam'}, {'name':'Dodoma'}, {'name':'Kampala'}, 
         {'name':'Mbarara'}, {'name':'Addis Ababa'}, {'name':'Khartoum'}, 
@@ -22,11 +24,12 @@ def result():
     pp(resp)
     if resp:
        data.append(resp)
-    if len(data) != 2:
-        error = 'Bad Response from Weather API'
+    # if len(data) != 2:
+    #     error = 'Bad Response from Weather API'
     return render_template(
         'result.html',
         data=data,
         error=error)
+    
 if __name__=='__main__':
     app.run(debug=True)

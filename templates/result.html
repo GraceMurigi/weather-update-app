@@ -10,7 +10,8 @@
  </h1> 
  <h1>Weather</h1>
  <h1>{{ d['name'] }}, {{ d['sys']['country'] }}</h1>
-    <h1>{{ d['main']['temp']|round|int}} °C</h1>
-    <h2>{{d['weather']['0']['description']}}</h2>
+ <hr>
+    <h2>{{ d['main']['temp']|round|int}} °C</h2>
+    <h3>{{d['weather'][0]['description']}}</h3>
 
 {% endfor %}
